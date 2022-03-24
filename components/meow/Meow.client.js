@@ -5,7 +5,7 @@ export function Meow() {
 
   return (
     <h1>
-      Meow-only-on-client <button onClick={() => setC(c + 1)}>{c}</button>
+      I am a client component. <button onClick={() => setC(c + 1)}>{c}</button>
     </h1>
   );
 }
