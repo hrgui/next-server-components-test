@@ -5,7 +5,7 @@ function wait(time) {
   return new Promise((resolve, reject) => setTimeout(resolve, time));
 }
 
-export async function getData(id = 1, waitTime = 10000) {
+export async function getData(id = 1, waitTime = 5000) {
   const res = await fetch(`https://swapi.dev/api/people/${id}`);
   const json = await res.json();
   await wait(waitTime);
