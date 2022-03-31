@@ -5,15 +5,15 @@ function wait(time) {
   return new Promise((resolve, reject) => setTimeout(resolve, time));
 }
 
-export async function getData() {
-  const res = await fetch(`https://swapi.dev/api/people/1`);
+export async function getData(id = 1, waitTime = 10000) {
+  const res = await fetch(`https://swapi.dev/api/people/${id}`);
   const json = await res.json();
-  await wait(10000);
+  await wait(waitTime);
   return json;
 }
 
-export function Profile() {
-  const data = useData("data", () => getData(), { revalidate: true });
+export function Profile({ id, waitTime }) {
+  const data = useData(`data-${id}`, () => getData(id, waitTime), { revalidate: true });
 
   return (
     <div>

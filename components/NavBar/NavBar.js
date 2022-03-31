@@ -16,6 +16,9 @@ export default function NavBar() {
       <Link href="/server-only">
         <a>Server Only</a>
       </Link>
+      <Link href="/incremental-wait">
+        <a>Incremental Server Components</a>
+      </Link>
     </nav>
   );
 }
