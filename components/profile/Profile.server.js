@@ -5,10 +5,8 @@ function wait(time) {
 }
 
 export async function getData(id = 1, waitTime = 5000) {
-  const res = await fetch(`https://swapi.dev/api/people/${id}`);
-  const json = await res.json();
   await wait(waitTime);
-  return json;
+  return { id, waitTime, date: new Date().getTime() };
 }
 
 export function Profile({ id, waitTime }) {
