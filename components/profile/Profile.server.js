@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import { useData } from "../../libs/use-fetch";
 
 function wait(time) {
